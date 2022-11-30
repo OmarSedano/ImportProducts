@@ -9,7 +9,7 @@ To test the application executable you can go to the Application folder (if you 
 
 - Open a command prompt inside the Application folder
 - Write the following command : "import capterra feed-products/capterra.yaml". You will see that the Capterra products are imported
-- Press Control + K to exit the program
+- Press Control + C to exit the program
 - Write the following command : "import softwareadvice feed-products/softwareadvice.json". You will see that the SoftwareAdvice products are imported
 
 ### Testing ImportProducstApp solution in Visual Studio
