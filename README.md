@@ -1,4 +1,4 @@
-This repository contains the code of a console application ImportProducstApp that reads products from differents sources (capterra and softwareadvice) as well as the Database querys
+This repository contains the code of a console application ImportProducstApp that reads products from differents sources (capterra and softwareadvice). It contains as well the Database querys answers for the Database part of the test. 
 
 
 ## ImportProducstApp
