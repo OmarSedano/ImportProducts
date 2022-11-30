@@ -21,8 +21,14 @@ You can also execute ImportProducstApp from Visual Studio and debug it for examp
 ### ImportProducstApp
 
 The solution has two projects the ImportProducstApp project where is the code of the program. In the future this code could be moved to another project to separate the Business Logic from the Console Application itself.
-Also there is a project called ImportProductsTests where there are the tests. They are unit tests of the main classes. With more time i would have tested the class ProductServiceType and other classes. Also i would add Functional testing, for example, a test that runs a Console Application process and tries to import products
-In order to be database implementation agnostic, there are IProducRepository and ProductRepository. Also if in the future we want to adde a new source of products the only thing that we will have to do is to add a new class NewProductSourceService that inherits from IProductService and to add also the corresponding logic to the class ProductServiceType. Also we should register NewProductSourceService in the Startup 
+
+The central service is called ImportProductService. It is the entry point to the business logic. 
+The first thing that does is to call "productServiceFactory(source)". It is a factory method that will resolve the IProductService interface between CapterraService and SoftwareAdviceService. To do that this factory is registered in the Program.cs in .AddTransient(ProductServiceFactory) ans uses the ProductServiceType class. It will allows us in the future, if we need to add a new soruce, to just add a new implementation that inherits from IProductService and to modify the class ProductServiceType to add the case. 
+The second thing is to call productService.GetProducts(sourcePath) to obtain the products formatted.
+The last thing is to call productsRepository.SaveAsync(products) to save the products. In order to be the service database logic agnostic, we inject IProducRepository. If we decide to change from for example Sql to MongoDb the only class we will need to  modify is ProductRepository.
+
+Also there is a project called ImportProductsTests where there are the tests.They are unit tests of the main classes. 
+With more time i would have tested the class ProductServiceType and other classes. Also i would add Functional testing, for example, a test that runs a Console Application process and tries to import products
 
 ## Database results
 The database querys results can be found in the top level, in the file Database_querys.md
