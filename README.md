@@ -20,8 +20,8 @@ You can also execute ImportProducstApp from Visual Studio and debug it for examp
 
 ### ImportProducstApp
 
-The solution has two projects the ImportProducstApp project where is the coode of the program. In the future this code could be moved to another project to separate the Business Logic from the Console Application itself.
-Also there is a project called ImportProductsTests where there are the tests. They are unit tests of the main classes. With more time i would have tested the class ProductServiceType and other classes. Also i would add Functional testing, for example, a test hat runs a Console Application process and tries to import products
+The solution has two projects the ImportProducstApp project where is the code of the program. In the future this code could be moved to another project to separate the Business Logic from the Console Application itself.
+Also there is a project called ImportProductsTests where there are the tests. They are unit tests of the main classes. With more time i would have tested the class ProductServiceType and other classes. Also i would add Functional testing, for example, a test that runs a Console Application process and tries to import products
 In order to be database implementation agnostic, there are IProducRepository and ProductRepository. Also if in the future we want to adde a new source of products the only thing that we will have to do is to add a new class NewProductSourceService that inherits from IProductService and to add also the corresponding logic to the class ProductServiceType. Also we should register NewProductSourceService in the Startup 
 
 ## Database results
